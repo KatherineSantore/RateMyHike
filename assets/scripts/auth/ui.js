@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (signUpResponse) {
-  $('#announcer').html('You are signed up! Now sign-in to play!').toggle(6000)
+  $('#signInModalLabel').html('You are signed up! Press close and sign-in to play!')
   document.getElementById('sign-up-form').reset()
 }
 const signUpError = function () {
