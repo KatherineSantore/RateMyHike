@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (signUpResponse) {
-  $('#signInModalLabel').html('You are signed up! Press close and sign-in to play!')
+  $('#signUpModalLabel').html('You are signed up! Press close and sign-in to play!')
   document.getElementById('sign-up-form').reset()
 }
 const signUpError = function () {
@@ -11,11 +11,8 @@ const signUpError = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#announcer').html('You are signed in! Make your first move!')
-  $('#hidden').show()
-  $('#changep').show()
-  $('#showFirst').hide()
-  document.getElementById('sign-in-form').reset()
+  $('#signInModalLabel').html('You are signed in! Press close to start rating!')
+  // document.getElementById('sign-in-form').reset()
   store.user = response.user
 }
 const signInError = function (response) {

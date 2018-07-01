@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Rate My Hike</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <html>
+      <head>
+        <title>Rate My Hike</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <!-- Do not add `link` tags-->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+        <!-- Do not add `script` tags-->
+        <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+        <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      </head>
     <body>
+      <div class="container-sign-up">
       <form id="sign-up-form">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Sign up
@@ -22,7 +24,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="signInModalLabel">Sign up</h5>
+                <h5 class="modal-title" id="signUpModalLabel">Sign up</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -41,6 +43,37 @@
           </div>
         </div>
 </form>
+</div> <br>
+<!-- sign in modal -->
+<div class="container-sign-in">
+<form id="sign-in-form">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example2Modal">
+    Sign In
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="example2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input name="credentials[email]" placeholder="Email" type="email"/>
+          <input name="credentials[password]" type="password" placeholder="Password"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="sign-in-button" class="btn btn-primary">Sign in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
       <h1>Rate My Hike</h1>
     </body>
 </html>
