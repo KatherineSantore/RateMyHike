@@ -1,0 +1,28 @@
+{{#each posts as |post|}}
+
+
+
+<h1> <small>Title: {{post.title}}</small></h1>
+  <div>
+
+    {{#if post.location}}
+      {{post.location}}
+    {{else}}
+      No location provided.
+    {{/if}}
+  </div>
+
+    {{#if post.body}}
+    {{post.body}}
+    {{else}}
+      No information provided.
+  {{/if}}
+
+  {{/each}}
+
+
+<!-- <ul>
+  {{#each items}}
+  <li>{{agree_button}}</li>
+  {{/each}}
+</ul> -->

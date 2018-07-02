@@ -4,15 +4,14 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const authUi = require('auth/ui.js')
 
 const onNewPost = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('data is', data)
   api.newPost(data)
-    .then(authUi.signUpSuccess)
-    .catch(authUi.signUpError)
+    .then(ui.newPostSuccess)
+    .catch(ui.newPostError)
 }
 const onUpdatePost = (event) => {
   event.preventDefault()
@@ -22,17 +21,17 @@ const onUpdatePost = (event) => {
     .then(ui.updatePostSuccess)
     .catch(ui.updatePostFailure)
 }
-const onDisplayPost = () => {
+const onGetPost = () => {
   event.preventDefault()
   api.displayPost()
-    .then(ui.displayPostSuccess)
-    .catch(ui.displayPostFailure)
+    .then(ui.getPostSuccess)
+    .catch(ui.getPostFailure)
 }
 
-const onGetPosts = () => {
+const onGetPosts = (data) => {
   event.preventDefault()
   api.getPosts()
-    .then(ui.getPostSuccess)
+    .then(ui.getPostsSuccess)
     .catch(ui.getPostsFailure)
 }
 const onDeletePost = () => {
@@ -41,10 +40,16 @@ const onDeletePost = () => {
     .then(ui.deletePostSuccess)
     .catch(ui.deltetePostFailure)
 }
+const addHandlers = () => {
+  $('#get-posts-button').on('click', onGetPosts)
+  $('.content').on('click', '.remove-post', onDeletePost)
+}
+
 module.exports = {
+  addHandlers: addHandlers,
   onNewPost: onNewPost,
-  onDisplayPost: onDisplayPost,
+  onGetPost: onGetPost,
   onUpdatePost: onUpdatePost,
   onGetPosts: onGetPosts,
-  onDeltePost: onDeletePost
+  onDeletePost: onDeletePost
 }

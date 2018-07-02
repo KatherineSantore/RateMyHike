@@ -14,7 +14,7 @@ const newPost = function (data) {
     data: ''
   })
 }
-const displayPost = function (data) {
+const getPost = function (data) {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/posts/' + store.post.id,
@@ -45,6 +45,7 @@ const getPosts = function (data) {
     }
   })
 }
+
 const deletePost = function (data) {
   return $.ajax({
     method: 'DELETE',
@@ -58,7 +59,8 @@ const deletePost = function (data) {
 
 module.exports = {
   newPost: newPost,
-  displayPost: displayPost,
+  getPost: getPost,
   updateGame: updatePost,
-  getPosts: getPosts
+  getPosts: getPosts,
+  deletePost: deletePost
 }
