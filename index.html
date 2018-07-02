@@ -66,14 +66,51 @@
           <input name="credentials[password]" type="password" placeholder="Password"/>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="si-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" id="sign-in-button" class="btn btn-primary">Sign in</button>
         </div>
       </div>
     </div>
   </div>
 </form>
-</div>
+</div> <br>
+<!--  Change Password Modal-->
+<div class="container-cp">
+<form id="cp-form">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example3Modal">
+    Change Password
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="example3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cpModalLabel">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input name="passwords[old]" placeholder="Old Password" type="password"/>
+          <input name="passwords[new]" type="password" placeholder="New Password"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" id="cp-button" class="btn btn-primary">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div> <br>
+<!-- Sign out Button  -->
+<div class="container-sign-out">
+<form id="sign-out-form">
+          <button type="button" id="sign-out-button" class="btn btn-primary">Sign Out</button>
+        </div>
+</form>
+ <br>
       <h1>Rate My Hike</h1>
     </body>
 </html>
