@@ -3,15 +3,14 @@
 const store = require('../store')
 const config = require('../config')
 
-
 const newPost = function (data) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/posts',
+    data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: ''
+    }
   })
 }
 const getPost = function (data) {

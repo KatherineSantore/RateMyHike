@@ -5,10 +5,10 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-const onNewPost = function (event) {
+const onNewPost = function () {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is', data)
+  // debugger
   api.newPost(data)
     .then(ui.newPostSuccess)
     .catch(ui.newPostError)
@@ -16,7 +16,6 @@ const onNewPost = function (event) {
 const onUpdatePost = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is', data)
   api.updatePost(data)
     .then(ui.updatePostSuccess)
     .catch(ui.updatePostFailure)
@@ -42,7 +41,8 @@ const onDeletePost = () => {
 }
 const addHandlers = () => {
   $('#get-posts-button').on('click', onGetPosts)
-  $('.content').on('click', '.remove-post', onDeletePost)
+  // $('.content').on('click', '.remove-post', onDeletePost)
+  $('#create-post-form').on('submit', onNewPost)
 }
 
 module.exports = {

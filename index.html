@@ -114,26 +114,26 @@
       <h1>Rate My Hike</h1>
   <div class="myBox" id="create-posts">
     <h3> Create a Post </h3>
-    <form>
+    <form id="create-post-form">
       <div class="form-group">
         <label for="formGroupExampleInput">Title</label>
-        <input name = "hike[hike title]" type="text" class="form-control" id="formGroupExampleInput0" placeholder="Title">
+        <input name = "post[title]" type="text" class="form-control" id="formGroupExampleInput0" placeholder="Title">
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput">Location</label>
-        <input name ="hike[hike location]" type="text" class="form-control" id="formGroupExampleInput1" placeholder="Location">
+        <input name ="post[location]" type="text" class="form-control" id="formGroupExampleInput1" placeholder="Location">
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Rating</label>
-        <textarea  name ="hike[hike body]" class="form-control" id="formGroupExampleInput2" placeholder="Rating"></textarea>
+        <textarea  name ="post[body]" class="form-control" id="formGroupExampleInput2" placeholder="Rating"></textarea>
       </div>
       <button type="submit" id="create-post-button" class="btn btn-primary">Create Post</button>
     </form> <br>
 </div>
 <h2> My Posts </h2>
 <div id="current-user-posts">
-<textarea  class="form-control" id="formGroupExampleInput4">
-</textarea>
+</div>
+<div id='show-user-posts'>
 <button type="submit" id="show-user-posts-button" class="btn btn-primary">My Posts</button>
 </div>
 <br>
@@ -142,5 +142,5 @@
 <button type="button" id="get-posts-button" class="btn btn-primary">Show All Posts</button>
 </div>
 </body>
-    </body>
+
 </html>

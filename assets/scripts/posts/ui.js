@@ -3,8 +3,9 @@
 // const events = require('./events.js')
 const showPostsTemplate = require('../templates/post-listing.handlebars')
 
-const newPostSuccess = function (signUpResponse) {
-
+const newPostSuccess = function (data) {
+  const showNewPostsHtml = showPostsTemplate({ posts: data.posts })
+  $('#show-posts').append(showNewPostsHtml)
 }
 const newPostError = function () {
 
@@ -19,6 +20,7 @@ const getPostsSuccess = (data) => {
   const showPostsHtml = showPostsTemplate({ posts: data.posts })
   // $('.show-posts').html('click', showPostsHtml)
   $('#show-posts').append(showPostsHtml)
+  $('#get-posts-button').hide()
 }
 
 const getPostsError = function () {
