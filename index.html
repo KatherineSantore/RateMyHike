@@ -112,20 +112,37 @@
 </form>
  <br>
       <h1>Rate My Hike</h1>
-  <div class="myBox" id="show-posts">
+  <div class="myBox" id="create-posts">
     <h3> Create a Post </h3>
     <form>
       <div class="form-group">
+        <label for="formGroupExampleInput">Title</label>
+        <input name = "hike[hike title]" type="text" class="form-control" id="formGroupExampleInput0" placeholder="Title">
+      </div>
+      <div class="form-group">
         <label for="formGroupExampleInput">Location</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Location">
+        <input name ="hike[hike location]" type="text" class="form-control" id="formGroupExampleInput1" placeholder="Location">
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">Rating</label>
-        <textarea type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rating"></textarea>
+        <textarea  name ="hike[hike body]" class="form-control" id="formGroupExampleInput2" placeholder="Rating"></textarea>
       </div>
-    </form>
+      <button type="submit" id="create-post-button" class="btn btn-primary">Create Post</button>
+    </form> <br>
 </div>
-
+<h2> My Posts </h2>
+<div id="current-user-posts">
+<textarea  class="form-control" id="formGroupExampleInput4">
+</textarea>
+<button type="submit" id="show-user-posts-button" class="btn btn-primary">My Posts</button>
+</div>
+<br>
+<h2> Show All Posts </h2>
+<div id="show-posts">
+<textarea  class="form-control" id="formGroupExampleInput3">
+</textarea>
+<button type="submit" id="show-posts-button" class="btn btn-primary">Show All Posts</button>
+</div>
 </body>
     </body>
 </html>
