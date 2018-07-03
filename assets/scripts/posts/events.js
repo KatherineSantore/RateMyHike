@@ -35,12 +35,14 @@ const onGetPosts = (data) => {
 }
 const onDeletePost = (event) => {
   event.preventDefault()
-    .then(ui.deletePostSuccess)
-    .catch(ui.deltetePostFailure)
+  const postId = $(event.target).attr('data-id')
+  api.deletePost(postId)
+    .then(() => onGetPosts(event))
+    .catch(ui.failure)
 }
 const addHandlers = () => {
   $('#get-posts-button').on('click', onGetPosts)
-  // $('.content').on('click', '.remove-post', onDeletePost)
+
   $('#create-post-form').on('submit', onNewPost)
 }
 

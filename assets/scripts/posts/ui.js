@@ -1,6 +1,6 @@
 'use strict'
-// const store = require('../store')
-// const events = require('./events.js')
+// const handlebars = require('../store')
+const events = require('./events.js')
 const showPostsTemplate = require('../templates/post-listing.handlebars')
 
 const newPostSuccess = function (data) {
@@ -18,7 +18,7 @@ const deletePostError = function () {
 }
 const getPostsSuccess = (data) => {
   const showPostsHtml = showPostsTemplate({ posts: data.posts })
-  // $('.show-posts').html('click', showPostsHtml)
+  $('.content').on('click', events.onDeletePost)
   $('#show-posts').append(showPostsHtml)
   $('#get-posts-button').hide()
 }

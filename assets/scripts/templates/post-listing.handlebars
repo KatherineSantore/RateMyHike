@@ -2,24 +2,29 @@
 
 
 
-<h1> <small>Title: {{post.title}}</small></h1>
+<h1> <small>{{post.title}}</small></h1>
   <div>
-
+    <li>
     {{#if post.location}}
       {{post.location}}
     {{else}}
       No location provided.
     {{/if}}
+  </li>
   </div>
-
+  <div>
+    <li>
     {{#if post.body}}
     {{post.body}}
     {{else}}
       No information provided.
   {{/if}}
-
+</li>
+</div>
+<div class="content">
+  <button type="button" data-id="{{post.id}}" class="btn btn-primary">Delete Post</button>
+</div>
   {{/each}}
-
 
 <!-- <ul>
   {{#each items}}
