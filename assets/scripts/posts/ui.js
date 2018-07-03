@@ -1,11 +1,14 @@
 'use strict'
-// const handlebars = require('../store')
+const store = require('../store')
+
 const events = require('./events.js')
 const showPostsTemplate = require('../templates/post-listing.handlebars')
 
 const newPostSuccess = function (data) {
   const showNewPostsHtml = showPostsTemplate({ posts: data.posts })
   $('#show-posts').append(showNewPostsHtml)
+  console.log(data)
+  store.post = response.post
 
 }
 const newPostError = function () {

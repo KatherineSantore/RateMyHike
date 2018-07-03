@@ -23,16 +23,15 @@ const getPost = function (data) {
     data: ''
   })
 }
-const updatePost = function (data) {
+const updatePost = function (data, postId) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/posts/' + store.post.id,
+    url: config.apiUrl + '/posts/' + postId,
+    data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
-  // const data = data {
-  //   }
 }
 
 const getPosts = function (data) {
@@ -58,7 +57,7 @@ const deletePost = function (postId) {
 module.exports = {
   newPost: newPost,
   getPost: getPost,
-  updateGame: updatePost,
+  updatePost: updatePost,
   getPosts: getPosts,
   deletePost: deletePost
 }

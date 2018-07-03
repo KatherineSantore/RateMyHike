@@ -14,6 +14,8 @@ const signUpError = function () {
 const signInSuccess = function (response) {
   $('#signInModalLabel').html('You are signed in! Press close to start rating!')
   store.user = response.user
+  $('#create-posts').show()
+  $('#show-posts').show()
 }
 const signInError = function (response) {
   $('#signInModalLabel').html('Please try again!')
