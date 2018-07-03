@@ -33,9 +33,8 @@ const onGetPosts = (data) => {
     .then(ui.getPostsSuccess)
     .catch(ui.getPostsFailure)
 }
-const onDeletePost = () => {
+const onDeletePost = (event) => {
   event.preventDefault()
-  api.deletePost()
     .then(ui.deletePostSuccess)
     .catch(ui.deltetePostFailure)
 }
