@@ -14,6 +14,7 @@ const onNewPost = function () {
     .catch(ui.newPostError)
 }
 const onUpdatePost = (event) => {
+  document.getElementById('#show-posts').contentEditable = 'true'
   event.preventDefault()
   const data = getFormFields(event.target)
   api.updatePost(data)
@@ -37,12 +38,14 @@ const onDeletePost = (event) => {
   event.preventDefault()
   const postId = $(event.target).attr('data-id')
   api.deletePost(postId)
-    .then(() => onGetPosts(event))
+    .then(ui.deletePostSuccess)
     .catch(ui.failure)
 }
+
 const addHandlers = () => {
   $('#get-posts-button').on('click', onGetPosts)
-
+  $('#show-posts').on('click', '.deleteButton', onDeletePost)
+  $('#show-posts').on('click', '.editButton', onUpdatePost)
   $('#create-post-form').on('submit', onNewPost)
 }
 

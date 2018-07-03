@@ -5,6 +5,7 @@ const events = require('./events.js')
 const signUpSuccess = function (signUpResponse) {
   $('#signUpModalLabel').html('You are signed up! Press close and sign-in to play!')
 }
+
 const signUpError = function () {
   $('#announcer').html('You are not signed up! Try again')
   document.getElementById('sign-up-form').reset()

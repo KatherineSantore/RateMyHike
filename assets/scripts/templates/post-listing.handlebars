@@ -21,9 +21,12 @@
   {{/if}}
 </li>
 </div>
-<div class="content">
-  <button type="button" data-id="{{post.id}}" class="btn btn-primary">Delete Post</button>
-</div>
+
+  <button type="button" data-id="{{post.id}}" class="deleteButton btn btn-primary">Delete Post</button>
+
+
+<button type="submit" data-id="{{post.id}}" class="editButton btn btn-primary">Edit Post</button>
+
   {{/each}}
 
 <!-- <ul>

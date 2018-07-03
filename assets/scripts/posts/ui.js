@@ -6,6 +6,7 @@ const showPostsTemplate = require('../templates/post-listing.handlebars')
 const newPostSuccess = function (data) {
   const showNewPostsHtml = showPostsTemplate({ posts: data.posts })
   $('#show-posts').append(showNewPostsHtml)
+
 }
 const newPostError = function () {
 
@@ -18,7 +19,7 @@ const deletePostError = function () {
 }
 const getPostsSuccess = (data) => {
   const showPostsHtml = showPostsTemplate({ posts: data.posts })
-  $('.content').on('click', events.onDeletePost)
+  // $('.content').on('click', events.onDeletePost)
   $('#show-posts').append(showPostsHtml)
   $('#get-posts-button').hide()
 }

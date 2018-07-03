@@ -48,7 +48,10 @@ const getPosts = function (data) {
 const deletePost = function (postId) {
   return $.ajax({
     url: config.apiUrl + '/posts/' + postId,
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

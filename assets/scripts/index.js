@@ -11,9 +11,9 @@ const postEvents = require('./posts/events.js')
 // require('./example')
 
 $(() => {
+  postEvents.addHandlers()
   $('#cp-form').hide()
   $('#sign-out-form').hide()
-  postEvents.addHandlers()
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#cp-form').on('submit', authEvents.onChangePassword)
