@@ -13,29 +13,26 @@ const newPostSuccess = function (data) {
 const newPostError = function () {
   $('#post-announcer').html('Something went wrong try again!').toggle(6000)
 }
-const deletePostSuccess = function (data) {
-  // $('#all-posts-announcer').html('The post is deleted!').toggle(6000)
-  $('.data-id.messagebox').html('You have successfully deleted this post!')
-  $('#show-posts').reset()
-  const showNewPostsHtml = showPostsTemplate({ posts: data.posts })
-  $('#show-posts').show(showNewPostsHtml)
+const deletePostSuccess = function () {
+  $('#announcer').html('You have successfully deleted this post! Click Show Post to See Any Posts You Have')
+  $('#show-posts').html('')
 }
 const deletePostError = function () {
   $('#all-posts-announcer').html('Please try again').toggle(6000)
 }
 const getPostsSuccess = (data) => {
-  const showPostsHtml = showPostsTemplate({ posts: data.posts })
-  $('#show-posts').append(showPostsHtml)
+  const showNewPostsHtml = showPostsTemplate({ posts: data.posts })
+  $('#show-posts').html(showNewPostsHtml)
 }
 
 const getPostsError = function () {
   $('#all-posts-announcer').html('Please try again').toggle(6000)
 }
 const updatePostSuccess = (data) => {
-  $('#updateForm').html('You have successfully updated this post!')
-  const showNewPostsHtml = showPostsTemplate({ posts: data.posts })
-  $('#show-posts').show(showNewPostsHtml)
+  $('.announcer').html('You have successfully updated this post!')
+  $('#show-posts').html('You have successfully updated this post!')
 }
+
 const updatePostFailure = function () {
   $('#updateForm').html('You have not successfully updated this post. Please try again').toggle(6000)
 }

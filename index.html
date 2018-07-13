@@ -16,7 +16,7 @@
       <div id='sign-up' class="container-sign-up">
         <div class="pull-right">
       <form id="sign-up-form">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" id="signUpButton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Sign up
         </button>
 
@@ -50,7 +50,7 @@
 <div id="sign-in" class="container-sign-in">
     <div class="pull-right">
 <form id="sign-in-form">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example2Modal">
+  <button type="button" id='signInButton' class="btn btn-primary" data-toggle="modal" data-target="#example2Modal">
     Sign In
   </button>
 
@@ -81,7 +81,7 @@
 <!--  Change Password Modal-->
 <div class="container-cp">
 <form id="cp-form">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example3Modal">
+  <button type="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#example3Modal">
     Change Password
   </button>
 
@@ -107,18 +107,19 @@
     </div>
   </div>
 </form>
-</div> <br>
+</div> <br><br>
 <!-- Sign out Button  -->
 <div class="container-sign-out">
 <form id="sign-out-form">
-          <button type="button" id="sign-out-button" class="btn btn-primary">Sign Out</button>
+          <button type="button" id="sign-out-button" class="btn btn-primary pull-left">Sign Out</button>
 
 </form>
   </div>
  <br>
       <div id="picture">
-      <img src="assets/images/rateMyHike.png"  class="center" alt="Rate My Hike Logo" height="250" width="500">
+      <img src="assets/images/rateMyHike.png"  class="center" alt="Rate My Hike Logo" height="200" width="450">
     </div>
+    <!-- Create Posts -->
   <div class="myBox" id="create-posts">
     <h3> Create a Post </h3>
     <form id="create-post-form">
@@ -137,29 +138,12 @@
       <button type="submit" id="create-post-button" class="btn btn-primary">Create Post</button>
     </form> <br>
 </div>
-<div  id="updateForm" class="editable hidden">
-  <form class="update-form editable">
-    <div class="form-group">
-      <label for="formGroupExampleInput">Title</label>
-      <input name="post[title]" placeholder="New Title" type="text" class="form-control" id="formGroupExampleInput0" placeholder="Title">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput">Location</label>
-      <input name ="post[location]" placeholder="New Title"type="text" class="form-control" id="formGroupExampleInput1" placeholder="Location">
-    </div>
-    <div class="form-group">
-      <label for="formGroupExampleInput2">Rating</label>
-      <textarea  name ="post[body]" class="form-control" id="formGroupExampleInput2" placeholder="Rating"></textarea>
-    </div>
-    <button type="submit"  class="saveUpdate btn btn-primary">Save</button>
-  </form><br>
-</div>
-<br>
 
-<div id="show-posts" contentEditable = 'false'>
-  <h2> Show All Posts </h2>
+<div id="announcer"> <p></p> </div>
+<div id="spbutton">  <h3> Show All Posts </h3>
 <button type="button" id="get-posts-button" class="btn btn-primary">Show All Posts</button>
 </div>
+<div id="show-posts"> </div>
 </body>
 
 </html>

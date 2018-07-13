@@ -16,6 +16,13 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#create-posts').show()
   $('#show-posts').show()
+  $('#showPosts').show()
+  $('#announcer').show()
+  $('#cp-form').show()
+  $('.spbutton').show()
+  $('#sign-out-form').show()
+  $('#signUpButton').hide()
+  $('#signInButton').hide()
 }
 const signInError = function (response) {
   $('#signInModalLabel').html('Please try again!')
@@ -33,6 +40,16 @@ const changePasswordError = function (response) {
 const signOutSuccess = function (response) {
   $('#signOutModalLabel').html('You are signed out! Press close to sign in again.')
   delete store.user
+  $('#showPosts').hide()
+  $('#create-posts').hide()
+  $('#show-posts').hide()
+  $('#showPosts').hide()
+  $('#announcer').hide()
+  $('#cp-form').hide()
+  $('#sign-out-form').hide()
+  $('#signUpButton').show()
+  $('#signInButton').show()
+  $('.spbutton').hide()
 }
 const signOutFailure = function (response) {
   $('#signOutModalLabel').html('You are not signed out! Try again.')

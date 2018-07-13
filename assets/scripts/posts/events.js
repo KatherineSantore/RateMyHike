@@ -33,6 +33,7 @@ const onUpdatePost = (event) => {
   const postId = event.target.dataset.id
   api.updatePost(data, postId)
     .then(ui.updatePostSuccess)
+    .then(onGetPosts())
     .catch(ui.updatePostFailure)
 }
 

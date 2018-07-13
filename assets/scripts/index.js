@@ -12,6 +12,7 @@ const postEvents = require('./posts/events.js')
 
 $(() => {
   $('#create-posts').hide()
+  $('#announcer').hide()
   $('#show-posts').hide()
   $('#cp-form').hide()
   $('#sign-out-form').hide()
