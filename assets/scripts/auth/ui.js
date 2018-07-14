@@ -42,7 +42,7 @@ const signOutSuccess = function (response) {
   delete store.user
   $('#showPosts').hide()
   $('#create-posts').hide()
-  $('#show-posts').hide()
+  $('#show-posts').html('')
   $('#showPosts').hide()
   $('#announcer').hide()
   $('#cp-form').hide()
