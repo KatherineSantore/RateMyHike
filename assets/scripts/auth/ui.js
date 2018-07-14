@@ -48,6 +48,7 @@ const signOutSuccess = function (response) {
   $('#sp').hide()
   $('#cpButton').hide()
   $('#sign-out-button').hide()
+  $('#announcer').html('')
 }
 const signOutFailure = function (response) {
   $('#announcer').html('You are not signed out! Try again.')
