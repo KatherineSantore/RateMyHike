@@ -1,36 +1,35 @@
 'use strict'
 const store = require('../store')
-const events = require('./events.js')
 
 const signUpSuccess = function (signUpResponse) {
   $('#signUpModalLabel').html('You are signed up! Press close and sign-in to play!')
+  document.getElementById('sign-up-form').reset()
 }
 
 const signUpError = function () {
-  $('#announcer').html('You are not signed up! Try again')
+  $('#announcer').html('You are not signed up! Try again').toggle(6000)
   document.getElementById('sign-up-form').reset()
 }
 
 const signInSuccess = function (response) {
   $('#signInModalLabel').html('You are signed in! Press close to start rating!')
   store.user = response.user
-  $('#create-posts').show()
-  $('#show-posts').show()
-  $('#showPosts').show()
-  $('#announcer').show()
-  $('#cp-form').show()
-  $('.spbutton').show()
-  $('#sign-out-form').show()
-  $('#signUpButton').hide()
   $('#signInButton').hide()
+  $('#signUpButton').hide()
+  $('#cpButton').show()
+  $('#sign-out-button').show()
+  $('#cp').show()
+  $('#sp').show()
+  document.getElementById('sign-in-form').reset()
 }
 const signInError = function (response) {
   $('#signInModalLabel').html('Please try again!')
-  // document.getElementById('sign-in-form').reset()
+  document.getElementById('sign-in-form').reset()
 }
 
 const changePasswordSuccess = function (response) {
   $('#cpModalLabel').html('Your password is changed!')
+  document.getElementById('cp-form').reset()
 }
 
 const changePasswordError = function (response) {
@@ -38,21 +37,20 @@ const changePasswordError = function (response) {
 }
 
 const signOutSuccess = function (response) {
-  $('#signOutModalLabel').html('You are signed out! Press close to sign in again.')
+  $('#sign-out-announcer').html('You are signed out!')
+  setTimeout(function () {
+    $('#sign-out-announcer').fadeOut().empty()
+  }, 5000)
   delete store.user
-  $('#showPosts').hide()
-  $('#create-posts').hide()
-  $('#show-posts').html('')
-  $('#showPosts').hide()
-  $('#announcer').hide()
-  $('#cp-form').hide()
-  $('#sign-out-form').hide()
-  $('#signUpButton').show()
   $('#signInButton').show()
-  $('.spbutton').hide()
+  $('#signUpButton').show()
+  $('#cp').hide()
+  $('#sp').hide()
+  $('#cpButton').hide()
+  $('#sign-out-button').hide()
 }
 const signOutFailure = function (response) {
-  $('#signOutModalLabel').html('You are not signed out! Try again.')
+  $('#announcer').html('You are not signed out! Try again.')
 }
 
 module.exports = {
@@ -64,5 +62,4 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordError
-
 }

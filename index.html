@@ -80,8 +80,9 @@
 </div> <br>
 <!--  Change Password Modal-->
 <div class="container-cp">
+  <div class="pull-left">
 <form id="cp-form">
-  <button type="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#example3Modal">
+  <button type="button" id ="cpButton" class="btn btn-primary pull-left" data-toggle="modal" data-target="#example3Modal">
     Change Password
   </button>
 
@@ -107,20 +108,22 @@
     </div>
   </div>
 </form>
+</div>
 </div> <br><br>
 <!-- Sign out Button  -->
-<div class="container-sign-out">
+<div class="container-sign-out" "pull-left"
 <form id="sign-out-form">
           <button type="button" id="sign-out-button" class="btn btn-primary pull-left">Sign Out</button>
-
 </form>
+<br><br>
   </div>
  <br>
+      <div id="sign-out-announcer"> </div>
       <div id="picture">
       <img src="assets/images/rateMyHike.png"  class="center" alt="Rate My Hike Logo" height="200" width="450">
     </div>
     <!-- Create Posts -->
-  <div class="myBox">
+  <div class="myBox" id="cp">
     <div id="post-announcer"> </div>
     <h3> Create a Post </h3>
     <form id="create-post-form">
@@ -139,12 +142,13 @@
       <button type="submit" id="create-post-button" class="btn btn-primary">Create Post</button>
     </form> <br>
 </div>
-
+<div id="sp">
 <div id="announcer"> <p></p> </div>
 <div id="spbutton">  <h3> Show All Posts </h3>
 <button type="button" id="get-posts-button" class="btn btn-primary">Show All Posts</button>
 </div>
 <div id="show-posts"> </div>
+</div>
 </body>
 
 </html>
