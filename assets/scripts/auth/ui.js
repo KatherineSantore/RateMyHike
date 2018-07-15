@@ -7,7 +7,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpError = function () {
-  $('#announcer').html('You are not signed up! Try again').toggle(6000)
+  $('#signUpModalLabel').html('You are not signed up! Try again')
   document.getElementById('sign-up-form').reset()
 }
 
