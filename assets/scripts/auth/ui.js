@@ -34,6 +34,7 @@ const changePasswordSuccess = function (response) {
 
 const changePasswordError = function (response) {
   $('#cpModalLabel').html('Your password is not changed! Try again.')
+  document.getElementById('cp-form').reset()
 }
 
 const signOutSuccess = function (response) {
@@ -49,6 +50,7 @@ const signOutSuccess = function (response) {
   $('#cpButton').hide()
   $('#sign-out-button').hide()
   $('#announcer').html('')
+  $('#cpModalLabel').html('')
 }
 const signOutFailure = function (response) {
   $('#announcer').html('You are not signed out! Try again.')
